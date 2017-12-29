@@ -1,0 +1,14 @@
+Options -Indexes
+DirectoryIndex index.php
+
+RewriteEngine	On
+RewriteRule ^account/login/ /login.php
+RewriteRule ^account/login /login.php
+RewriteRule ^account/register/ /register.php
+RewriteRule ^account/register /register.php
+RewriteRule ^account/success/ /success.php
+RewriteRule ^account/success /success.php
+
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+ErrorDocument 404 /errors/404.php
